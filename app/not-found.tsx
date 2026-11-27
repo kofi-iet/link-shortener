@@ -3,7 +3,7 @@ import { ArrowLeft, Link2, Unlink } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#050505] px-4 py-8 text-white sm:py-12">
+    <main className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-[#050505] px-4 py-8 pb-[calc(2rem+env(safe-area-inset-bottom))] text-white sm:py-12">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-600/15 blur-3xl" />
         <div className="absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-violet-600/15 blur-3xl" />
