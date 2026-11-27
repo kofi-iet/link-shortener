@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f9fc;
-  --foreground: #0f172a;
+  --background: #050505;
+  --foreground: #f8fafc;
 }
 
 * {
@@ -34,8 +34,8 @@ samp {
 }
 
 ::selection {
-  background: #bfdbfe;
-  color: #0f172a;
+  background: #1d4ed8;
+  color: #ffffff;
 }
 
 input,
@@ -46,7 +46,7 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #60a5fa;
   outline-offset: 2px;
 }
 
