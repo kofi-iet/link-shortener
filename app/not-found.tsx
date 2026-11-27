@@ -3,7 +3,7 @@ import { ArrowLeft, Link2, Unlink } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#050505] px-4 py-12 text-white">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#050505] px-4 py-8 text-white sm:py-12">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-600/15 blur-3xl" />
         <div className="absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-violet-600/15 blur-3xl" />
@@ -24,7 +24,7 @@ export default function NotFound() {
           </span>
         </Link>
 
-        <div className="rounded-[1.75rem] border border-white/10 bg-[#0d0d0d] p-6 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.9)] sm:p-8">
+        <div className="rounded-3xl border border-white/10 bg-[#0d0d0d] p-6 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.9)] sm:p-8">
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400">
             <Unlink className="h-7 w-7" />
           </div>
@@ -37,7 +37,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-bold text-slate-950 shadow-lg shadow-white/10 transition hover:bg-blue-500 hover:text-white hover:shadow-blue-500/20 focus:outline-none focus:ring-4 focus:ring-blue-500/20"
+            className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-bold text-slate-950 shadow-lg shadow-white/10 transition hover:bg-blue-500 hover:text-white hover:shadow-blue-500/20 active:scale-[0.99] focus:outline-none focus:ring-4 focus:ring-blue-500/20 sm:w-auto"
           >
             <ArrowLeft className="h-4 w-4" />
             Kembali ke beranda

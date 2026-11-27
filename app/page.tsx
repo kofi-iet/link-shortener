@@ -81,12 +81,12 @@ export default function Home() {
       </div>
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
-        <header className="flex items-center justify-between py-6 sm:py-8">
+        <header className="flex items-center justify-between py-5 sm:py-8">
           <a href="/" className="group flex items-center gap-3" aria-label="Pendekin URL beranda">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg shadow-slate-950/15 transition-transform group-hover:-rotate-6 sm:h-11 sm:w-11">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-950 shadow-lg shadow-white/10 transition-transform group-hover:-rotate-6 sm:h-11 sm:w-11">
               <Link2 className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.4} />
             </span>
-            <span className="text-base font-bold tracking-tight text-white sm:text-lg">pendekin<span className="text-blue-600">.url</span></span>
+            <span className="text-base font-bold tracking-tight text-white sm:text-lg">pendekin<span className="text-blue-400">.url</span></span>
           </a>
           <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-slate-300 shadow-sm backdrop-blur sm:flex">
             <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
@@ -94,13 +94,13 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="grid flex-1 items-center gap-12 pb-12 pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 lg:pb-20 lg:pt-10">
+        <div className="grid flex-1 items-center gap-10 pb-10 pt-6 sm:gap-12 sm:pb-12 sm:pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 lg:pb-20 lg:pt-10">
           <section className="max-w-2xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-3.5 py-2 text-xs font-bold uppercase tracking-[0.14em] text-blue-300 shadow-sm shadow-blue-950/40 sm:mb-7">
               <Sparkles className="h-3.5 w-3.5" />
               Link lebih rapi, dalam sekejap
             </div>
-            <h1 className="max-w-xl text-4xl font-black leading-[1.08] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-xl text-[clamp(2.25rem,8vw,3.75rem)] font-black leading-[1.08] tracking-[-0.045em] text-white">
               Link panjang jadi
               <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text pb-2 text-transparent">pendek dan berkesan.</span>
             </h1>
@@ -108,7 +108,7 @@ export default function Home() {
               Bagikan URL yang bersih, mudah diingat, dan terlihat profesional. Tanpa registrasi, tanpa langkah rumit.
             </p>
 
-            <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-[#0d0d0d] p-4 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.8)] sm:mt-10 sm:p-6">
+            <div className="mt-8 rounded-3xl border border-white/10 bg-[#101010] p-4 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.8)] sm:mt-10 sm:p-6">
               <form onSubmit={handleSubmit}>
                 <label htmlFor="url" className="mb-2.5 block text-sm font-bold text-slate-200">Masukkan URL yang ingin dipendekkan</label>
                 <div className="flex flex-col gap-3 sm:flex-row">
@@ -122,13 +122,13 @@ export default function Home() {
                       placeholder="https://contoh.com/url-panjang"
                       required
                       autoComplete="url"
-                      className="h-14 w-full rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 hover:border-white/20 focus:border-blue-500 focus:bg-white/[0.08] focus:ring-4 focus:ring-blue-500/10"
+                      className="h-14 w-full rounded-xl border border-white/10 bg-white/[0.06] pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 hover:border-white/20 focus:border-blue-500 focus:bg-white/[0.08] focus:ring-4 focus:ring-blue-500/10"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex h-14 shrink-0 items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:bg-blue-600 hover:shadow-blue-600/20 focus:outline-none focus:ring-4 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-60 sm:px-6"
+                    className="inline-flex h-14 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-600/30 active:scale-[0.99] focus:outline-none focus:ring-4 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-6"
                   >
                     {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Zap className="h-4 w-4" />}
                     {loading ? "Memproses" : "Pendekkan"}
@@ -149,35 +149,35 @@ export default function Home() {
                     <CheckCircle2 className="h-5 w-5" />
                     Link berhasil dibuat
                   </div>
-                  <div className="flex min-w-0 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] p-2">
-                    <a href={shortUrl} target="_blank" rel="noopener noreferrer" className="min-w-0 flex-1 break-all px-2 text-sm font-semibold text-blue-700 underline decoration-blue-200 underline-offset-4 transition hover:text-blue-900">
+                  <div className="flex min-w-0 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] p-2 sm:p-2.5">
+                    <a href={shortUrl} target="_blank" rel="noopener noreferrer" className="min-w-0 flex-1 break-all px-2 text-sm font-semibold text-blue-300 underline decoration-blue-400/40 underline-offset-4 transition hover:text-blue-200">
                       {shortUrl}
                     </a>
                     <button
                       type="button"
                       onClick={handleCopy}
-                      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-white transition hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-500/20"
+                      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-slate-950 transition hover:bg-blue-600 hover:text-white active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-500/20"
                       title={copied ? "Link tersalin" : "Salin link"}
                       aria-label={copied ? "Link tersalin" : "Salin link"}
                     >
                       {copied ? <Check className="h-4 w-4 text-emerald-300" /> : <Copy className="h-4 w-4" />}
                     </button>
                   </div>
-                  {copied && <p className="mt-2 text-xs font-semibold text-emerald-700">Link tersalin ke clipboard.</p>}
+                  {copied && <p className="mt-2 text-xs font-semibold text-emerald-300">Link tersalin ke clipboard.</p>}
                 </div>
               )}
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500 sm:mt-7">
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-400 sm:mt-7">
               <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-500" />Gratis selamanya</span>
               <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-500" />Tanpa daftar</span>
               <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-500" />Proses cepat</span>
             </div>
           </section>
 
-          <aside className="relative mx-auto w-full max-w-md lg:mr-0" aria-label="Keunggulan Pendekin URL">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-blue-200/50 via-transparent to-violet-200/60 blur-2xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/80 bg-slate-950 p-5 shadow-[0_30px_80px_-28px_rgba(15,23,42,0.55)] sm:p-7">
+          <aside className="relative mx-auto w-full max-w-md lg:sticky lg:top-8 lg:mr-0" aria-label="Keunggulan Pendekin URL">
+            <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-blue-600/20 via-transparent to-violet-600/20 blur-2xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d0d0d] p-5 shadow-[0_30px_80px_-28px_rgba(0,0,0,0.8)] sm:p-7">
               <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl" aria-hidden="true" />
               <div className="relative">
                 <div className="flex items-center justify-between border-b border-white/10 pb-5">
@@ -191,24 +191,24 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-                  <p className="truncate text-xs text-slate-500">URL ASLI</p>
+                  <p className="truncate text-xs text-slate-400">URL ASLI</p>
                   <p className="mt-2 truncate text-sm text-slate-300">contoh.com/artikel-terbaru...</p>
                   <div className="my-4 flex items-center gap-3">
                     <div className="h-px flex-1 bg-gradient-to-r from-blue-400/70 to-violet-400/70" />
                     <ArrowRight className="h-4 w-4 text-blue-300" />
                     <div className="h-px flex-1 bg-gradient-to-r from-violet-400/70 to-blue-400/70" />
                   </div>
-                  <p className="truncate text-xs text-slate-500">LINK PENDEK</p>
+                  <p className="truncate text-xs text-slate-400">LINK PENDEK</p>
                   <p className="mt-2 truncate text-base font-bold text-blue-300">pendekin.url/aB3xY7z</p>
                 </div>
 
-                <div className="mt-5 grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-white/10 bg-white/[0.05] p-3.5">
+                <div className="mt-5 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-white/20 hover:bg-white/[0.08]">
                     <Zap className="h-4 w-4 text-amber-300" />
                     <p className="mt-3 text-sm font-bold text-white">Sekejap</p>
                     <p className="mt-1 text-xs leading-5 text-slate-400">Buat link tanpa menunggu</p>
                   </div>
-                  <div className="rounded-xl border border-white/10 bg-white/[0.05] p-3.5">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-white/20 hover:bg-white/[0.08]">
                     <ShieldCheck className="h-4 w-4 text-emerald-300" />
                     <p className="mt-3 text-sm font-bold text-white">Terpercaya</p>
                     <p className="mt-1 text-xs leading-5 text-slate-400">Format aman dan rapi</p>
@@ -219,7 +219,7 @@ export default function Home() {
           </aside>
         </div>
 
-        <footer className="flex flex-col gap-2 border-t border-slate-200/80 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <footer className="flex flex-col gap-2 border-t border-white/10 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Pendekin URL</p>
           <p className="font-medium">Sederhana. Cepat. Profesional.</p>
         </footer>
